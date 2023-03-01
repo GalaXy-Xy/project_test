@@ -1,0 +1,21 @@
+{
+  "name": "prize-pool-dapp",
+  "version": "1.0.0",
+  "description": "Decentralized Prize Pool Lottery System on Sepolia Testnet",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "test": "cd contracts && npm test",
+    "deploy": "cd contracts && npm run deploy",
+    "compile": "cd contracts && npm run compile"
+  },
+  "keywords": ["dapp", "lottery", "ethereum", "sepolia", "chainlink", "vrf"],
+  "author": "GalaXy Team",
+  "license": "MIT",
+  "workspaces": [
+    "contracts",
+    "frontend"
+  ]
+}
