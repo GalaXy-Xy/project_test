@@ -1,19 +1,35 @@
 {
   "name": "prize-pool-dapp",
   "version": "1.0.0",
-  "description": "Decentralized Prize Pool Lottery System on Sepolia Testnet",
+  "description": "A decentralized prize pool lottery system built on Ethereum Sepolia testnet",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "start": "cd frontend && npm start",
-    "test": "cd contracts && npm test",
+    "dev": "concurrently \"npm run dev:contracts\" \"npm run dev:frontend\"",
+    "dev:contracts": "cd contracts && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:contracts && npm run build:frontend",
+    "build:contracts": "cd contracts && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:contracts && npm run test:frontend",
+    "test:contracts": "cd contracts && npm run test",
+    "test:frontend": "cd frontend && npm run test",
     "deploy": "cd contracts && npm run deploy",
-    "compile": "cd contracts && npm run compile"
+    "verify": "cd contracts && npm run verify"
   },
-  "keywords": ["dapp", "lottery", "ethereum", "sepolia", "chainlink", "vrf"],
+  "keywords": [
+    "ethereum",
+    "dapp",
+    "lottery",
+    "prize-pool",
+    "chainlink",
+    "vrf",
+    "sepolia"
+  ],
   "author": "GalaXy Team",
   "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
   "workspaces": [
     "contracts",
     "frontend"
